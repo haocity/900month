@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>人生只有900月</title>
+	<style>
+	
+		body{
+			margin: 0px;
+			padding: 0px;
+			background-image:url("http://img.ivsky.com/img/bizhi/img/201203/28/steins_gate-057.jpg");
+			background-color:#3ab6e4;
+			background-size: cover;
+			background-repeat: no-repeat;
+			text-align: center;
+			color: #fff;
+			font-family: "Microsoft yahei" !important;
+		}
+		h1{
+			margin-top: 10%;
+		}
+		
+		
+		.but{
+			margin-bottom: 40px;
+			margin-top: 100px;
+			width:280px;
+			height:40px;
+			background-color: #1e6489;
+			padding: 0px;
+			border: 1px solid #fff;
+			color: #fff;
+			cursor:pointer;
+		}
+		.tex{
+		background-color: #1e6489;
+		height:40px;
+		
+		border: 1px solid #fff;
+		color: #fff;
+		}
+		#web3{
+		margin-top:12%;
+		}
+		.bigbar{
+			background-color: aqua;
+			margin: 0px 10%;
+			border-radius: 5px;
+
+			}
+   .bar{ background: #AF7777;
+       border-radius: 5px;
+       display: block;
+       height: 10px;
+       width: 20%;
+   }
+   #web4{
+   background-color:rgba(255, 255, 255, 0.53);
+    margin: 80px;
+    padding: 20px;
+   
+   }
+   @media ( max-width: 600px ) {
+    #web4 {
+        width: 300px;
+        margin-top: 100px;
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+}
+	</style>
+</head>
+<body>
+	<div id="web1"  style="display:block;">
+	
+		<h1>人生只有900月</h1>
+		<h2>你还有多少？</h2>
+		<input class="but" type="button" value="立即测试" onclick="xweb1()">
+	</div>
+	<div id="web2" style="display:none;">
+		<h1>出生日期</h1>
+		
+  <p>
+    <label>
+      <input name="year" class="tex" type="text" id="year" size="4" maxlength="4" />
+    </label>
+    年
+<input name="mon" type="text" class="tex" id="mon" size="2" maxlength="2" /> 
+    月
+    <input name="day" type="text"  class="tex"id="day" size="2" maxlength="2" /> 
+    日</br>
+    <label>
+      <input type="submit" class="but"  id="tijiao" value="提交"  onclick="getoldtime()"/>
+    </label>
+  </p>
+			
+		</div>
+	<div id="web3"style="display:none;">
+		<h1 id="sx"></h1>
+		<h2 id="ing"></h2>
+		<h2 id="percent"></h2>
+		<p id="now"></p>
+		<p id="future"></p>
+		<p id="other"></p>
+		<div class="kuangbar"><div class="bigbar"> <span class="bar" id="bar" style="width: 0%;"></span></div></div>
+		<input type="button" id="xs" class="but"value="显示评论" onclick="xweb3()" style="display:inline-block;">
+		<input type="button" id="yc"class="but"value="隐藏评论" onclick="yweb3()" style="display:none;">
+</div>
+	<div id="web4" style="display:none;">
+<!-- UY BEGIN -->
+<div id="uyan_frame"></div>
+<script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=1958241"></script>
+<!-- UY END -->
+	
+	</div>
+<script>
+	var year,mon,day;
+function xweb1()
+{
+document.getElementById("web1").style.display="none";
+document.getElementById("web2").style.display="block";     
+     
+}
+
+function getoldtime() {
+	 year=document.getElementById('year').value;
+	 mon=document.getElementById('mon').value;
+	 day=document.getElementById('day').value;
+	if(year<=1900)alert("年份输入错误");
+	else if(mon>12||mon<1)alert("月份输入错误");
+	else if(day>=31||day<1)alert("日期输入错误");
+	else{
+	//alert(year+mon+day);测试代码
+    document.getElementById("web2").style.display="none";
+	document.getElementById("web3").style.display="block";   
+	gettime();
+	}
+}
+//评论框显示代码
+function xweb3(){ 	document.getElementById("web4").style.display="block";  document.getElementById("xs").style.display="none"; document.getElementById("yc").style.display="inline-block";}
+function yweb3(){ 	document.getElementById("web4").style.display="none";  document.getElementById("yc").style.display="none"; document.getElementById("xs").style.display="inline-block";}
+//输出时间代码
+function gettime() {
+	var old = new Date(mon+"/"+day+"/"+year);
+        var oldtime = old.getTime();
+        var now = new Date();
+        var nowtime = now.getTime();
+        var ing = (nowtime - oldtime) / 1000 / 60 / 60 / 24 / 30.4166666666667;
+        var futuretime = oldtime + 2365200000000;
+        var future = new Date(futuretime);
+        var percent = ing / 9;
+        var other = 900-ing;
+        if (other<=0) {
+	    document.getElementById("sx").innerHTML = "寿星好！" ;   
+	    document.getElementById("ing").innerHTML = "度过" + ing.toFixed(0) + "个月";
+		var hother=0-other;
+        document.getElementById("other").innerHTML = "抗拒" + hother.toFixed(0) + "个月";
+        
+        document.getElementById("percent").innerHTML = "已经走过常人" + percent.toFixed(9)+ "%"+"历程";
+        
+        }
+        else{
+        //document.getElementById("now").innerHTML = "现在时间" + now;
+        //document.getElementById("future").innerHTML = "寿命时间" + future;
+        document.getElementById("ing").innerHTML = "度过" + ing.toFixed(0) + "个月";
+        document.getElementById("other").innerHTML = "剩余" + other.toFixed(0) + "个月";
+        document.getElementById("percent").innerHTML = "已经走过" + percent.toFixed(9) + "%";
+        document.getElementById("bar").style.width=percent.toFixed(9) + "%";
+        }
+}
+    setInterval(gettime,100);
+
+</script>
+
+</body>
+</html>
