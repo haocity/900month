@@ -46,7 +46,7 @@ function gettime() {
         else{
         //document.getElementById("now").innerHTML = "现在时间" + now;
         //document.getElementById("future").innerHTML = "寿命时间" + future;
-        document.getElementById("ing").innerHTML = "度过" + ing.toFixed(0) + "个月";
+        document.getElementById("ing").innerHTML = "你已经度过" + ing.toFixed(0) + "个月";
         document.getElementById("other").innerHTML = "剩余" + other.toFixed(0) + "个月";
         document.getElementById("percent").innerHTML = "已经走过" + percent.toFixed(9) + "%";
         document.getElementById("bar").style.width=percent.toFixed(9) + "%";
