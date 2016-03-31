@@ -4,73 +4,7 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<title>人生只有900月</title>
-	<style>
-	
-		body{
-			margin: 0px;
-			padding: 0px;
-			background-image:url("/bj.jpg");
-			background-color:#3ab6e4;
-			background-size: cover;
-			background-repeat: no-repeat;
-			text-align: center;
-			color: #fff;
-			font-family: "Microsoft yahei" !important;
-		}
-		h1{
-			margin-top: 10%;
-		}
-		
-		
-		.but{
-			margin-bottom: 40px;
-			margin-top: 100px;
-			width:280px;
-			height:40px;
-			background-color: #1e6489;
-			padding: 0px;
-			border: 1px solid #fff;
-			color: #fff;
-			cursor:pointer;
-		}
-		.tex{
-		background-color: #1e6489;
-		height:40px;
-		
-		border: 1px solid #fff;
-		color: #fff;
-		}
-		#web3{
-		margin-top:12%;
-		}
-		.bigbar{
-			background-color: aqua;
-			margin: 0px 10%;
-			border-radius: 5px;
-
-			}
-   .bar{ background: #AF7777;
-       border-radius: 5px;
-       display: block;
-       height: 10px;
-       width: 20%;
-   }
-   #web4{
-   background-color:rgba(255, 255, 255, 0.53);
-    margin: 80px;
-    padding: 20px;
-   
-   }
-   @media ( max-width: 600px ) {
-    #web4 {
-        width: 300px;
-        margin-top: 100px;
-        margin-left: auto;
-        margin-right: auto;
-
-    }
-}
-	</style>
+	<link rel=stylesheet href="style.css" type="text/css">
 </head>
 <body>
 	<div id="web1"  style="display:block;">
@@ -115,62 +49,8 @@
 <!-- UY END -->
 	
 	</div>
-<script>
-	var year,mon,day;
-function xweb1()
-{
-document.getElementById("web1").style.display="none";
-document.getElementById("web2").style.display="block";     
-     
-}
-
-function getoldtime() {
-	 year=document.getElementById('year').value;
-	 mon=document.getElementById('mon').value;
-	 day=document.getElementById('day').value;
-	if(year<=1900)alert("年份输入错误");
-	else if(mon>12||mon<1)alert("月份输入错误");
-	else if(day>=31||day<1)alert("日期输入错误");
-	else{
-	//alert(year+mon+day);测试代码
-    document.getElementById("web2").style.display="none";
-	document.getElementById("web3").style.display="block";   
-	gettime();
-	}
-}
-//评论框显示代码
-function xweb3(){ 	document.getElementById("web4").style.display="block";  document.getElementById("xs").style.display="none"; document.getElementById("yc").style.display="inline-block";}
-function yweb3(){ 	document.getElementById("web4").style.display="none";  document.getElementById("yc").style.display="none"; document.getElementById("xs").style.display="inline-block";}
-//输出时间代码
-function gettime() {
-	var old = new Date(mon+"/"+day+"/"+year);
-        var oldtime = old.getTime();
-        var now = new Date();
-        var nowtime = now.getTime();
-        var ing = (nowtime - oldtime) / 1000 / 60 / 60 / 24 / 30.4166666666667;
-        var futuretime = oldtime + 2365200000000;
-        var future = new Date(futuretime);
-        var percent = ing / 9;
-        var other = 900-ing;
-        if (other<=0) {
-	    document.getElementById("sx").innerHTML = "寿星好！" ;   
-	    document.getElementById("ing").innerHTML = "度过" + ing.toFixed(0) + "个月";
-		var hother=0-other;
-        document.getElementById("other").innerHTML = "抗拒" + hother.toFixed(0) + "个月";
-        
-        document.getElementById("percent").innerHTML = "已经走过常人" + percent.toFixed(9)+ "%"+"历程";
-        
-        }
-        else{
-        //document.getElementById("now").innerHTML = "现在时间" + now;
-        //document.getElementById("future").innerHTML = "寿命时间" + future;
-        document.getElementById("ing").innerHTML = "度过" + ing.toFixed(0) + "个月";
-        document.getElementById("other").innerHTML = "剩余" + other.toFixed(0) + "个月";
-        document.getElementById("percent").innerHTML = "已经走过" + percent.toFixed(9) + "%";
-        document.getElementById("bar").style.width=percent.toFixed(9) + "%";
-        }
-}
-    setInterval(gettime,100);
+<script type="text/javascript" src="time.js">
+	
 
 </script>
 
