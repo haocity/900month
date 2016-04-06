@@ -1,8 +1,12 @@
 var year,mon,day;
 function xweb1()
 {
-document.getElementById("web1").style.display="none";
-document.getElementById("web2").style.display="block";     
+    document.getElementById("web1").setAttribute("class","page out");
+    document.getElementById("main").style.backgroundColor="#3ab6e4";
+    setTimeout(function(){
+        document.getElementById("web1").style.display="none";
+        document.getElementById("web2").style.display="block";
+    },500)
      
 }
 
@@ -15,8 +19,14 @@ function getoldtime() {
 	else if(day>=31||day<1)alert("日期输入错误");
 	else{
 	//alert(year+mon+day);测试代码
-    document.getElementById("web2").style.display="none";
-	document.getElementById("web3").style.display="block";   
+
+    document.getElementById("web2").setAttribute("class","page out");
+        document.getElementById("main").style.backgroundColor="#0c895d";
+        setTimeout(function(){
+            document.getElementById("web2").style.display="none";
+            document.getElementById("web3").style.display="block";
+        },500)
+
 	gettime();
 	}
 }

@@ -6,49 +6,56 @@
 	<title>人生只有900月</title>
 	<link rel=stylesheet href="style.css" type="text/css">
 </head>
-<body>
-	<div id="web1"  style="display:block;">
-	
+<body id="main">
+	<div id="web1" class="page" style="display:block;">
+	     <div class="bj"></div>
 		<h1>人生只有900月</h1>
 		<h2>你还有多少？</h2>
 		<input class="but" type="button" value="立即测试" onclick="xweb1()">
 	</div>
-	<div id="web2" style="display:none;">
+
+
+	<div id="web2" class="page" style="display:none;">
+		<div class="bj"></div>
 		<h1>出生日期</h1>
 		
-  <p>
-    <label>
-      <input name="year" class="tex" type="text" id="year" size="4" maxlength="4" />
-    </label>
-    年
-<input name="mon" type="text" class="tex" id="mon" size="2" maxlength="2" /> 
-    月
-    <input name="day" type="text"  class="tex"id="day" size="2" maxlength="2" /> 
-    日</br>
-    <label>
-      <input type="submit" class="but"  id="tijiao" value="提交"  onclick="getoldtime()"/>
-    </label>
-  </p>
+ 		 <p>
+		<label>
+		  <input name="year" class="tex" type="text" id="year" size="4" maxlength="4" />
+		</label>
+		年
+	<input name="mon" type="text" class="tex" id="mon" size="2" maxlength="2" />
+		月
+		<input name="day" type="text"  class="tex"id="day" size="2" maxlength="2" />
+		日</br>
+		<label>
+		  <input type="submit" class="but"  id="tijiao" value="提交"  onclick="getoldtime()"/>
+		</label>
+	  </p>
 			
 		</div>
-	<div id="web3"style="display:none;">
+	<div id="web3" class="page" style="display:none;">
+		<img src="fc.png">
 		<h1 id="sx"></h1>
 		<h2 id="ing"></h2>
 		<h2 id="percent"></h2>
 		<p id="now"></p>
 		<p id="future"></p>
 		<p id="other"></p>
+		<br></br>
 		<div class="kuangbar"><div class="bigbar"> <span class="bar" id="bar" style="width: 0%;"></span></div></div>
 		<input type="button" id="xs" class="but"value="显示评论" onclick="xweb3()" style="display:inline-block;">
 		<input type="button" id="yc"class="but"value="隐藏评论" onclick="yweb3()" style="display:none;">
+		<!-- 评论 -->
+		<div id="web4" style="display:none;">
+			<!-- UY BEGIN -->
+			<div id="uyan_frame"></div>
+			<script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=1958241"></script>
+			<!-- UY END -->
+
+		</div>
 </div>
-	<div id="web4" style="display:none;">
-<!-- UY BEGIN -->
-<div id="uyan_frame"></div>
-<script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=1958241"></script>
-<!-- UY END -->
-	
-	</div>
+
 <script type="text/javascript" src="time.js">
 	
 
