@@ -9,6 +9,15 @@ function xweb1()
     },500)
      
 }
+//回车键提交代码
+
+    function  subCheck()
+    {
+        if(event.keyCode==13)
+        {
+            document.all("tijiao").click();
+        }
+    }
 
 function getoldtime() {
 	 year=document.getElementById('year').value;
