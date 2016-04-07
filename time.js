@@ -31,8 +31,8 @@ function getoldtime() {
 	}
 }
 //评论框显示代码
-function xweb3(){ 	document.getElementById("web4").style.display="block";  document.getElementById("xs").style.display="none"; document.getElementById("yc").style.display="inline-block";}
-function yweb3(){ 	document.getElementById("web4").style.display="none";  document.getElementById("yc").style.display="none"; document.getElementById("xs").style.display="inline-block";}
+function xweb3(){ 	document.getElementById("web4").style.display="block";  document.getElementById("xs").style.display="none"; document.getElementById("yc").style.display="inline-block";    location.hash="#web4";}
+function yweb3(){ 	document.getElementById("web4").style.display="none";  document.getElementById("yc").style.display="none"; document.getElementById("xs").style.display="inline-block";location.hash="#web3";}
 //输出时间代码
 function gettime() {
 	var old = new Date(mon+"/"+day+"/"+year);
