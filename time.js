@@ -11,8 +11,7 @@ function xweb1() {
 }
 //回车键提交代码
 function subCheck() {
-	e = event ? event : (window.event ? window.event : null);
-    if (e.keyCode == 13) {
+    if (event.keyCode == 13) {
         document.all("tijiao").click();
     }
 }
